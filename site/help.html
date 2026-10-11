@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help · Splitcast</title>
+  <meta name="description" content="Getting started with Splitcast, and answers to common questions.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Splitcast</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="help.html" aria-current="page">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-head">
+    <div class="wrap narrow">
+      <h1>Help</h1>
+      <p>Getting started, and answers to common questions.</p>
+    </div>
+  </div>
+
+  <main class="doc">
+    <div class="wrap narrow">
+      <ul class="toc">
+        <li><a href="#start">Getting started</a></li>
+        <li><a href="#predictions">Predictions</a></li>
+        <li><a href="#data">Health data</a></li>
+        <li><a href="#widgets">Widgets and alerts</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <h2 id="start">Getting started</h2>
+      <ol>
+        <li><strong>Connect Apple Health.</strong> Splitcast asks to read workouts, heart rate, VO2max, HRV, running power and sleep. Allow all of them for the best results.</li>
+        <li><strong>Wait for the first read.</strong> Splitcast reads up to 5 years of history once. With a lot of workouts this can take a minute; after that it opens straight away.</li>
+        <li><strong>Pick your races.</strong> Splitcast lists your fastest runs at each distance. Tick the ones that were races or hard efforts. Pick a few at different distances if you can.</li>
+        <li><strong>Compare and set a goal.</strong> Compare shows then vs now for any race. Goal tracks your predicted time towards a target.</li>
+      </ol>
+
+      <h2 id="predictions">Predictions</h2>
+      <details>
+        <summary>Why does it say "Nothing to predict from yet"?</summary>
+        <p>Predictions start from one real result: a race, parkrun or hard solo effort. Add one in Results, or tick one of your fast runs. Until then, Goal shows a rough estimate from your fastest mile in the last 8 weeks.</p>
+      </details>
+      <details>
+        <summary>My prediction seems too fast or too slow</summary>
+        <p>Check "How good is this?" on the Goal tab to see how accurate it has been for you. Common causes: a race on a downhill or short course (swipe it in Results to stop it being used), a hilly race used as the benchmark (predictions assume a flat course), or a marker with odd data (turn it off in Results › Prediction markers).</p>
+      </details>
+      <details>
+        <summary>Why is my marathon prediction slower than other calculators?</summary>
+        <p>Most calculators assume everyone slows down by the same amount over longer races. When you have races at two distances within a year, Splitcast uses how you actually slow down, which for most people is more than the textbook figure.</p>
+      </details>
+      <details>
+        <summary>A marker says "Not enough data"</summary>
+        <p>Each marker needs a minimum amount of data in the window: a VO2max reading from the Watch in the 3 months before, or 3+ steady outdoor runs with heart rate (and running power, for the power markers). Missing markers are left out, not counted as zero, and the prediction uses the rest.</p>
+      </details>
+      <details>
+        <summary>Why are there no power markers for my older races?</summary>
+        <p>Apple Watch running power needs a Series 6 or later with watchOS 9 or newer. Races from before you had one simply use VO2max and distance per heartbeat.</p>
+      </details>
+      <details>
+        <summary>What counts as a "steady run"?</summary>
+        <p>An outdoor run of 5 km (3.1 miles) or more at an easy to moderate effort: an average heart rate between about 67% and 86% of your maximum. Treadmill runs, short jogs and hard sessions are left out, so runs compare fairly with each other. At least 3 are needed in each window.</p>
+      </details>
+
+      <h2 id="data">Health data</h2>
+      <details>
+        <summary>My runs are saved by Strava, Runna or another app. Does that work?</summary>
+        <p>Yes. If your Watch was recording heart rate and power during the run, Splitcast uses those samples whichever app saved the workout. Runs saved by more than one app are counted once.</p>
+      </details>
+      <details>
+        <summary>The app was slow to respond right after I allowed Health access</summary>
+        <p>Health can take a few seconds to answer the first requests after you grant access, especially with years of data. It only happens on the first read.</p>
+      </details>
+      <details>
+        <summary>How do I refresh or re-read my data?</summary>
+        <p>Splitcast keeps a copy of your Health data so it opens quickly. In Results, tap Refresh for a quick update, or "Re-read all history" after fixing old workouts in Health. The app reminds you if the copy is more than 30 days old.</p>
+      </details>
+      <details>
+        <summary>How do I change what Splitcast can read?</summary>
+        <p>In the Settings app: Health › Data Access &amp; Devices › Splitcast. Splitcast never writes to Health.</p>
+      </details>
+
+      <h2 id="widgets">Widgets and alerts</h2>
+      <details>
+        <summary>How do I add a widget?</summary>
+        <p>Touch and hold the Home Screen or Lock Screen, tap Edit › Add Widget and choose Splitcast. Touch and hold the widget and choose Edit Widget to pick a distance, or let it follow your goal.</p>
+      </details>
+      <details>
+        <summary>My widget says the data is old</summary>
+        <p>Widgets update when Splitcast is woken after a workout is saved, if "Update in the background" is on in Results › Settings. iOS can't read Health while your phone is locked, so it catches up next time. Opening the app always refreshes them.</p>
+      </details>
+      <details>
+        <summary>What are goal alerts?</summary>
+        <p>Optional notifications when your prediction moves within 10%, 5% or 2% of your goal, or beats it. At most one a day, never for getting less fit. Turn them on in Results › Settings.</p>
+      </details>
+
+      <h2 id="contact">Contact</h2>
+      <p>Found a bug or have an idea? Email <a href="mailto:[contact email]">[contact email]</a>. Screenshots help a lot.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <div>Splitcast is a training guide, not medical advice.</div>
+    </div>
+  </footer>
+</body>
+</html>

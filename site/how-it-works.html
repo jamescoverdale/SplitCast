@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How it works · Splitcast</title>
+  <meta name="description" content="How Splitcast compares your fitness with a past race and predicts your race time today.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Splitcast</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+        <a href="help.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-head">
+    <div class="wrap narrow">
+      <h1>How it works</h1>
+      <p>The maths behind the prediction, in plain words.</p>
+    </div>
+  </div>
+
+  <main class="doc">
+    <div class="wrap narrow">
+      <ul class="toc">
+        <li><a href="#then-vs-now">Then vs now</a></li>
+        <li><a href="#markers">The markers</a></li>
+        <li><a href="#prediction">The prediction</a></li>
+        <li><a href="#distances">Other distances</a></li>
+        <li><a href="#accuracy">How good is it?</a></li>
+        <li><a href="#limits">Limits</a></li>
+      </ul>
+
+      <h2 id="then-vs-now">Then vs now</h2>
+      <p>Pick a past race or time trial. Splitcast looks at the <strong>42 days before it</strong> (race day itself left out) and at <strong>your last 42 days</strong>, and works out the same markers for both windows. The difference between them is how much fitter, or less fit, you are now.</p>
+      <p>Health doesn't mark which runs were races, so you choose them. Splitcast suggests your fastest runs at 5k, 10k, half and marathon distance, and you can add races that aren't in Health and correct times to chip times.</p>
+
+      <h2 id="markers">The markers</h2>
+      <p>Four markers measure your aerobic engine. They feed the prediction:</p>
+      <table>
+        <thead><tr><th>Marker</th><th>What it measures</th><th>Needs</th></tr></thead>
+        <tbody>
+          <tr><td>VO2max</td><td>Apple Watch's estimate of your aerobic capacity</td><td>A Watch reading in the 3 months before</td></tr>
+          <tr><td>Distance per heartbeat</td><td>How far you travel for each beat on steady outdoor runs, with climbing counted as extra distance</td><td>3+ steady outdoor runs with heart rate</td></tr>
+          <tr><td>Power per heartbeat</td><td>Running power for each beat on the same steady runs</td><td>3+ steady runs with Watch running power</td></tr>
+          <tr><td>Critical power</td><td>From your hardest 3- and 12-minute efforts</td><td>Watch running power</td></tr>
+        </tbody>
+      </table>
+      <p>Others give context but don't change the time: training load (fitness), form (fitness minus fatigue), resting heart rate, HRV and sleep.</p>
+      <div class="callout">Missing data is never counted as zero. A marker without enough data is left out and the app says why. If you think a marker's data is wrong, you can turn it off in Results › Prediction markers.</div>
+
+      <h2 id="prediction">The prediction</h2>
+      <p>Your time then is scaled by how much the markers have changed. If they're 4% better than before your race, your time is predicted about 2% faster, because the time is scaled by the square root of the change:</p>
+      <p class="formula">time now = time then ÷ √(average marker now ÷ average marker then)</p>
+      <p>The likely range shows the most and least hopeful single marker. With no races added yet, your fastest mile in the last 8 weeks stands in as a rough starting point, and the app says so.</p>
+
+      <h2 id="distances">Other distances</h2>
+      <p>To predict a different distance, Splitcast uses Riegel's formula: time grows with distance to a power.</p>
+      <p class="formula">time₂ = time₁ × (distance₂ ÷ distance₁)<sup>k</sup></p>
+      <p>The textbook power is 1.06, which assumes you're trained for the distance. Most runners slow down more than that over long races, so when you have results at two distances within a year, Splitcast works out your own power from them.</p>
+      <div class="callout">One runner's 5k time predicted a 3:19 marathon with the textbook power. Their real marathons were 3:56 and 4:14. Their own power (1.14) predicted 3:54. Add a few races at different distances for the best predictions.</div>
+
+      <h2 id="accuracy">How good is it?</h2>
+      <p>On the Goal tab, "How good is this?" shows what the app would have predicted for each of your past races, using only data from before them. It's the honest test: if it's often far off for you, treat predictions as a rough guide.</p>
+      <p>Across real race results while it was being built, adding hills and critical power took the average error from 3.8% to 3.2%, about 40 seconds on a 20-minute 5k.</p>
+
+      <h2 id="limits">Limits</h2>
+      <ul>
+        <li>Predictions assume a flat course in mild weather. Hills, heat and wind add time.</li>
+        <li>VO2max is Apple's estimate. It can shift with software updates or a new Watch.</li>
+        <li>Running power needs Apple Watch Series 6 or later with watchOS 9. Older Watches simply leave the power markers out.</li>
+        <li>HRV jumps if you start wearing your Watch overnight. That isn't a sudden gain in fitness.</li>
+        <li>Splitcast is a training guide, not medical advice.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a href="index.html">Home</a>
+        <a href="help.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <div>Splitcast is a training guide, not medical advice.</div>
+    </div>
+  </footer>
+</body>
+</html>
